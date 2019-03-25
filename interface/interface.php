@@ -1,5 +1,8 @@
 <?php
 
+namespace interfaces;
+
+
 interface searchable {
 
     function search();
@@ -14,4 +17,3 @@ interface deletable {
 interface updateable {
     function update ();
 }
-
