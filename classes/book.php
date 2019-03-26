@@ -2,13 +2,13 @@
 
 namespace classes;
 
-//require_once '../interface/interface.php';
-require_once '../traits/traits.php';
-//use interfaces\borrowable;
+include_once 'interface/interface.php';
+include 'traits/traits.php';
+//use interfaces\stockable;
 use traits\searchy;
 
 
-Class Book { 
+Class Book  { 
 private $bookName;
 private $pubDate;
 private $edition;
@@ -19,17 +19,25 @@ private $ISBN;
 private $authorFirstName;
 private $authorLastName;
 
-//public function inStock(){
-//    return $this->stock;
-//}
-//
-//public function borrowedBook(){
-//    return  $this->stock = $this->stock -1;
-//}
-//
-//public function returnedBook(){
-//    return $this->stock = $this->stock +1;;
-//}
+
+
+    
+public function setStock($number){
+    
+    return $this->stock=$number;
+}
+
+public function getStock(){
+    return $this->stock;
+}
+
+public function borrowedBook(){
+    return  $this->stock = $this->stock -1;
+}
+
+public function returnedBook(){
+    return $this->stock = $this->stock +1;;
+}
 public Function __construct ($bookName, $pubDate, $edition, $stock, $authorFirstName, $authorLastName, $genre) {
           $this->authorFirstName = $authorFirstName;
           $this->bookName = $bookName;
@@ -52,10 +60,7 @@ public function get_Title(){
 //}
 //    
 //
-//public function copies(int $number){
-//    $this->stock=$number;
-//    echo "there are $number  $this->bookName books in total";
-//}
+
 //
 //public function avaliable() {
 //  
@@ -104,20 +109,20 @@ $a = array (
     1=> array ('bookname' => 'Vampire Diaries', 'firstName'=> 'John', 'lastName' =>'Smith')
      );
 
-
-$harryPotter = new Book ('Harry Potter', 'JK', 'Rowling', 'a', 'b', 'c', 'd');
-
-print_r ($harryPotter);
-
-$harryPotter->copies(10);
-echo "\n";
-
-echo "\n";
-echo $harryPotter->get_Title($harryPotter);
-echo "\n";
-//echo $book1->searchByName('Harry Potter');
-echo $harryPotter->searchByName($harryPotter);
-echo "\n";
+//
+//$harryPotter = new Book ('Harry Potter', 'JK', 'Rowling', 'a', 'b', 'c', 'd');
+//
+//print_r ($harryPotter);
+//
+//$harryPotter->copies(10);
+//echo "\n";
+//
+//echo "\n";
+//echo $harryPotter->get_Title($harryPotter);
+//echo "\n";
+////echo $book1->searchByName('Harry Potter');
+//echo $harryPotter->searchByName($harryPotter);
+//echo "\n";
 //echo $harryPotter->stock;
 //echo $harryPotter->returnBook($harryPotter);
 //       

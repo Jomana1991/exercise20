@@ -1,9 +1,8 @@
 <?php
-//only search interface and the book(all books) 
-// search 
-// boroow and request interface (member and admin)
+
+// borrow and request interface (member and admin)
 // trait search 
-// the book: interface borrowable/searchable (list all book)/requestable/ returnable
+// the book: interface borrowable requestable/ returnable
 // the member: same but not returnable 
 // the admin: retrunable / search (list all book)/ 
 
@@ -12,8 +11,8 @@ namespace traits;
 trait searchy {
     public function searchByName($bookObject){
       $titleName=$bookObject->get_Title();
-        if ($bookObject->inStock() >0 ) {
-  return "There are ". $bookObject->inStock() . " copies of $titleName";
+        if ($bookObject->getStock() >0 ) {
+  echo $titleName ." is avaliable and we have ". $bookObject->getStock() . " copies left";
 
           
     } else {
@@ -24,11 +23,10 @@ trait searchy {
     
         public function requestBook($bookObject){
       $titleName=$bookObject->get_Title();
-        if ($bookObject->inStock() >0 ) {
+        if ($bookObject->getStock() >0 ) {
          $updatedStock= $bookObject->borrowedBook();
-            echo "We would like to confim that $titleName book has been requested and there are $updatedStock copies left.";
-
-          
+            echo "We would like to confim that $titleName book has been requested and you can pick it up from your local Library. There are $updatedStock copies left.";
+     
     } else {
         die ($bookObject->get_Title(). "is not avaliable, please try another book");
     }
@@ -37,10 +35,10 @@ trait searchy {
     
   public function returnBook($bookObject) {
        $titleName=$bookObject->get_Title();
-       $firstName=$this->first_name;
+       $firstName=$this->firstName;
        $updatedStock=$bookObject->returnedBook();
       
-   echo "\n $firstName has returned a book so there are $updatedStock $titleName copies left";    
+   echo "\n $firstName has returned the $titleName book so there are $updatedStock copies left";    
  }
  
  // the above has details that the member shouldnt see.. only trying it out

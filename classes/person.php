@@ -7,9 +7,14 @@ namespace classes;
  abstract Class person  {
      
         protected $username;
-    protected $password;
+        protected $password;
     
+   
       abstract function log_in($username1, $password1);
+      
+      public function get_userName(){
+          return $this->username;
+      }
 
  } 
 
@@ -53,23 +58,23 @@ namespace classes;
 
 
 // to test set and get new person
-$person1= new person;
-
-$person1->set_firstName('Lucy');
-$person1->set_lastName('Martin');
-$person1->personInfo();
-
-
-$person = array ( 
-    0=> array('first_name' => 'John', 'second_name' => 'Smith'),
-    1=> array ('first_name' => 'Lucy', 'second_name' => 'Martin'),
-    2=> array ('first_name' => 'Max', 'second_name' => 'JD')
-     );
-
-//to test the search person function
-$newPerson = new person ();
-print_r($newPerson->search_person($person,'first_name', 'John'));
-
-print_r ($newPerson);
+//$person1= new person;
+//
+//$person1->set_firstName('Lucy');
+//$person1->set_lastName('Martin');
+//$person1->personInfo();
+//
+//
+//$person = array ( 
+//    0=> array('first_name' => 'John', 'second_name' => 'Smith'),
+//    1=> array ('first_name' => 'Lucy', 'second_name' => 'Martin'),
+//    2=> array ('first_name' => 'Max', 'second_name' => 'JD')
+//     );
+//
+////to test the search person function
+//$newPerson = new person ();
+//print_r($newPerson->search_person($person,'first_name', 'John'));
+//
+//print_r ($newPerson);
 
 
