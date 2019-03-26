@@ -2,13 +2,10 @@
 
 namespace interfaces;
 
-//interface stockable {
-//    function setStock($bookName, $number);
-//}
-//interface searchable {
-//
-//    function search();
-//}
+interface searchable {
+
+    function searchBook( Array $array);
+}
 //
 //interface deletable {
 //

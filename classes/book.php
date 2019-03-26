@@ -2,9 +2,9 @@
 
 namespace classes;
 
-include_once 'interface/interface.php';
-include 'traits/traits.php';
-//use interfaces\stockable;
+
+require_once 'traits/traits.php';
+
 use traits\searchy;
 
 
