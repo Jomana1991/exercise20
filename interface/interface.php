@@ -6,7 +6,7 @@ interface searchable {
 
     function searchBook( Array $array);
 }
-//
+
 //interface deletable {
 //
 //    function delete();
